@@ -76,6 +76,7 @@ const FeaturesSection = () => {
     { name: "Cineby", url: "https://www.cineby.gd/" }, 
     { name: "SteamRip", url: "https://steamrip.com/" }, 
     { name: "ToxicGames", url: "https://toxicgames.in/" },
+    { name: "FileCR", url: "https://filecr.com/us-en/" },
   ];
 
   return (
