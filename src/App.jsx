@@ -56,14 +56,6 @@ const HeroSection = () => {
 
   return (
     <section className="hero-section" id="home">
-      <img 
-        className="bg-image" 
-        src="https://img.freepik.com/free-vector/black-background-with-wavy-lines_52683-76524.jpg?semt=ais_hybrid&w=740&q=80" 
-        alt="Background" 
-      />
-
-      <div className="hero-overlay"></div>
-
       <div className="hero-content">
         <h1 className="main-title">
           WLinks
@@ -89,6 +81,10 @@ const FeaturesSection = () => {
 
   return (
     <section className="features-section" id="features">
+      <h2 style={{ marginBottom: '2.5rem', fontSize: '1.1rem', fontWeight: 'bold' }}>
+        <span style={{ color: 'var(--primary-orange)' }}>Ahoy, Mateys! </span>
+        <span style={{ color: 'white' }}>Be sure to use AdBlock and VPN if needed.</span>
+      </h2>
       <ul className="features-list">
         {features.map((feature, index) => (
           <li key={index}>
@@ -137,8 +133,17 @@ const App = () => {
 
   return (
     <div className="App">
+      <img 
+        className="bg-image-fixed" 
+        src="https://img.freepik.com/free-vector/black-background-with-wavy-lines_52683-76524.jpg?semt=ais_hybrid&w=740&q=80" 
+        alt="Background" 
+      />
+      <div className="hero-overlay-fixed"></div>
+
       <NavBar onViewChange={setCurrentView} /> 
-      {renderContent()}
+      <main className="main-content">
+        {renderContent()}
+      </main>
     </div>
   );
 };
