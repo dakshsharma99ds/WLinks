@@ -21,6 +21,7 @@ const styles = {
         fontSize: '2.5rem',
         fontWeight: 'bold',
         marginBottom: '10px',
+        marginTop: '20px',
         color: '#ff7e00', 
     },
    
@@ -100,7 +101,7 @@ const ContactSection = () => {
                 GET IN TOUCH
             </h1>
             <p style={styles.contactSubtitle}>
-                Have a question, feedback, or need to report a dead link? Contact the WLinks team.
+                Have a question, feedback, or need to report a dead link? Contact WLinks.
             </p>
             
             <div style={styles.formContainer}>
