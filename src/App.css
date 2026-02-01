@@ -21,11 +21,36 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: var(--dark-background);
   text-align: center;
+  position: relative;
 }
 
-/* Navbar Section */
+.bg-image-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(28, 28, 28, 0.7); 
+  z-index: -1;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
 .navbar {
-  background-color: var(--dark-background);
+  background-color: rgba(28, 28, 28, 0.95);
   color: var(--light-text);
   padding: 1rem 4rem;
   display: flex;
@@ -107,39 +132,16 @@ body {
 }
 
 .hero-section {
-  position: relative;
-  height: 90.20vh; 
+  height: 90vh; 
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--light-text);
-  overflow: hidden;
   padding: 0 20px;
-}
-
-.bg-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(28, 28, 28, 0.7); 
-  z-index: 2;
 }
 
 .hero-content {
   position: relative;
-  z-index: 3;
 }
 
 .main-title {
@@ -190,10 +192,9 @@ body {
 }
 
 .features-section {
-  background-color: rgb(30, 30, 30);
-  color: var(--dark-background);
+  background-color: transparent; 
   min-height: 50vh;
-  padding: 3rem 2rem;
+  padding: 5rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -214,7 +215,7 @@ body {
   border-radius: 10px;
   font-size: 1.2rem;
   font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
   overflow: hidden;
 }
@@ -233,20 +234,17 @@ body {
 .features-list li:hover {
   transform: translateY(-3px);
   background-color: #ffa467;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.features-list li:hover a {
-  color: rgb(255, 255, 255);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 .app-footer {
-  background-color: #111;
+  background-color: rgba(17, 17, 17, 0.9);
   color: var(--accent-gray);
   padding: 2rem 1rem;
   font-size: 0.9rem;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
   .navbar {
     padding: 1rem 2rem;
@@ -288,6 +286,3 @@ body {
     font-size: 3.5rem;
   }
 }
-
-
-
