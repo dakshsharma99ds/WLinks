@@ -189,9 +189,8 @@ body {
   transform: translateY(-2px);
 }
 
-/* Features Section */
 .features-section {
-  background-color: #e2e2e2;
+  background-color: grey;
   color: var(--dark-background);
   min-height: 50vh;
   padding: 3rem 2rem;
@@ -289,3 +288,4 @@ body {
     font-size: 3.5rem;
   }
 }
+
