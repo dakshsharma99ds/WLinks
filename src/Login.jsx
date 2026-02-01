@@ -147,7 +147,7 @@ const Login = ({ onBackToHome }) => {
 
       <div className="login-page">
         <div className="login-card">
-          <h2>WLinks Login</h2>
+          <h2>Login</h2>
           <div className={`status-message ${status}`}>{getStatusMessage()}</div>
           <form onSubmit={handleSubmit}>
             <div className="input-group">
