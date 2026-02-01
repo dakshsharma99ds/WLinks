@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Login from './Login';
-import AboutSection from './About';
 import ContactSection from './Contact';
 import './App.css';
 
@@ -19,11 +18,12 @@ const NavBar = ({ onViewChange }) => {
         {isMenuOpen ? '✕' : '☰'}
       </button>
       <div className={`nav-links ${isMenuOpen ? 'nav-open' : ''}`}>
-        {['Home', 'Contact', 'About'].map((link, index) => (
+        {['Home', 'Contact'].map((link, index) => (
           <a 
             key={index} 
             href={`#${link}`} 
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               onViewChange(link.toLowerCase());
               setIsMenuOpen(false); 
             }}
@@ -56,6 +56,14 @@ const HeroSection = () => {
 
   return (
     <section className="hero-section" id="home">
+      <img 
+        className="bg-image" 
+        src="https://img.freepik.com/free-vector/black-background-with-wavy-lines_52683-76524.jpg?semt=ais_hybrid&w=740&q=80" 
+        alt="Background" 
+      />
+
+      <div className="hero-overlay"></div>
+
       <div className="hero-content">
         <h1 className="main-title">
           WLinks
@@ -81,14 +89,10 @@ const FeaturesSection = () => {
 
   return (
     <section className="features-section" id="features">
-      <h2>Our Core Piracy Links</h2>
-      <p className="section-motto">
-        WLinks main motive is to provide the best, curated Piracy sites for EVERYTHING!
-      </p>
       <ul className="features-list">
         {features.map((feature, index) => (
           <li key={index}>
-            🔗 <a 
+            <a 
               href={feature.url} 
               target="_blank" 
               rel="noopener noreferrer" 
@@ -117,9 +121,6 @@ const App = () => {
   const renderContent = () => {
     if (currentView === 'login') {
       return <Login onBackToHome={() => setCurrentView('home')} />;
-    }
-    if (currentView === 'about') { 
-      return <AboutSection />;
     }
     if (currentView === 'contact') { 
       return <ContactSection />;
