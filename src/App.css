@@ -190,7 +190,7 @@ body {
 }
 
 .features-section {
-  background-color: grey;
+  background-color: dark-grey;
   color: var(--dark-background);
   min-height: 50vh;
   padding: 3rem 2rem;
@@ -288,4 +288,5 @@ body {
     font-size: 3.5rem;
   }
 }
+
 
