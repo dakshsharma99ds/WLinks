@@ -49,8 +49,26 @@ const NavBar = ({ onViewChange }) => {
 const HeroSection = () => {
   const handleScrollToFeatures = () => {
     const featuresSection = document.getElementById('features');
+    const navbar = document.querySelector('.navbar');
+    
     if (featuresSection) {
-      featuresSection.scrollIntoView({ behavior: 'smooth' });
+      const rect = featuresSection.getBoundingClientRect();
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const navHeight = navbar ? navbar.offsetHeight : 0;
+      
+      // The absolute top of the section
+      const elementTop = rect.top + scrollTop;
+      
+      // Calculate available viewport height (total height minus the sticky navbar)
+      const availableHeight = window.innerHeight - navHeight;
+      
+      // Center the element within that available height, then offset by navHeight
+      const finalPosition = elementTop - (availableHeight / 2) + (rect.height / 2) - navHeight;
+
+      window.scrollTo({
+        top: finalPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -73,7 +91,7 @@ const HeroSection = () => {
 const FeaturesSection = () => {
   const features = [
     { name: "AEScripts", url: "https://freevideoeffect.com/aescripts-deep-glow-2/" },
-    { name: "WeLibrary", url: "https://welib.org/ /" },
+    { name: "WeLibrary", url: "https://welib.org/" },
     { name: "Cineby", url: "https://www.cineby.gd/" },
     { name: "SteamRip", url: "https://steamrip.com/" }, 
     { name: "FileCR", url: "https://filecr.com/us-en/" },
