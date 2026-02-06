@@ -10,7 +10,6 @@ const Login = ({ onBackToHome }) => {
     setStatus('loggingIn');
     
     setTimeout(() => {
-    
       if (email === 'user@wlinks.com' && password === 'password') {
         setStatus('success');
       } else {
@@ -39,109 +38,106 @@ const Login = ({ onBackToHome }) => {
         }
 
         .login-page {
-          min-height: 90.20vh;
+          min-height: 89vh;
           display: flex;
           align-items: center;
           justify-content: center;
-          background-image: linear-gradient(rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.8)), url('https://img.freepik.com/free-vector/black-background-with-wavy-lines_52683-76524.jpg?semt=ais_hybrid&w=740&q=80'); 
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-color: var(--dark-background); 
+          padding: 20px;
         }
 
         .login-card {
-          background-color: #2c2c2c; 
-          padding: 3rem;
-          border-radius: 12px;
+          background: rgba(34, 34, 34, 0.9);
+          padding: 30px;
+          border-radius: 15px;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-          width: 90%;
+          width: 100%;
           max-width: 400px;
+          color: white;
           text-align: center;
         }
 
         .login-card h2 {
+          margin-bottom: 10px;
           color: var(--primary-orange);
-          margin-bottom: 2rem;
           font-size: 2rem;
-          font-weight: 800;
         }
 
+        .status-message {
+          margin-bottom: 25px;
+          font-size: 0.9rem;
+          padding: 10px;
+          border-radius: 5px;
+        }
+
+        .status-message.error { color: #ff4444; background: rgba(255, 68, 68, 0.1); }
+        .status-message.success { color: #00c851; background: rgba(0, 200, 81, 0.1); }
+        .status-message.loggingIn { color: var(--primary-orange); }
+
         .input-group {
-          margin-bottom: 1.5rem;
+          margin-bottom: 20px;
           text-align: left;
         }
 
         .input-group label {
           display: block;
-          margin-bottom: 0.5rem;
-          font-weight: 500;
+          margin-bottom: 8px;
+          font-size: 0.9rem;
           color: var(--accent-gray);
         }
 
         .input-group input {
           width: 100%;
-          padding: 0.75rem 1rem;
+          padding: 12px 15px;
+          border-radius: 8px;
           border: 1px solid #444;
-          border-radius: 6px;
-          background-color: #383838;
-          color: var(--light-text);
-          font-size: 1rem;
-          transition: border-color 0.3s;
+          background: #2a2a2a;
+          color: white;
+          outline: none;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .input-group input:focus {
-          outline: none;
           border-color: var(--primary-orange);
-        }
-        
-        .status-message {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            min-height: 1.5rem;
-            color: var(--accent-gray);
+          box-shadow: 0 0 8px rgba(255, 126, 0, 0.3);
         }
 
-        .status-message.success {
-            color: #4CAF50;
-            font-weight: 700;
-        }
-
-        .status-message.error {
-            color: #f44336;
-            font-weight: 700;
-        }
-        
         .login-button-submit {
           width: 100%;
-          padding: 1rem;
-          font-size: 1.1rem;
-          background-color: var(--primary-orange);
-          color: var(--dark-background);
+          padding: 14px;
+          background: var(--primary-orange);
+          color: black;
           border: none;
-          border-radius: 6px;
-          font-weight: 700;
+          border-radius: 8px;
+          font-size: 1.1rem;
+          font-weight: bold;
           cursor: pointer;
-          transition: background-color 0.2s, transform 0.1s;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+          transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+          margin-top: 10px;
         }
 
         .login-button-submit:hover:not(:disabled) {
-          background-color: #ff9933;
-          transform: translateY(-1px);
+          background: #e67200;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
         }
 
         .login-button-submit:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
+          opacity: 0.7;
+          cursor: not-allowed;
         }
 
         .back-link {
-            display: block;
-            margin-top: 1.5rem;
-            color: var(--primary-orange);
-            text-decoration: none;
-            cursor: pointer;
+          display: block;
+          margin-top: 20px;
+          color: var(--accent-gray);
+          font-size: 0.9rem;
+          cursor: pointer;
+          transition: color 0.3s;
+        }
+
+        .back-link:hover {
+          color: var(--primary-orange);
         }
       `}</style>
 
