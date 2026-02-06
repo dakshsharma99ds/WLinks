@@ -2,7 +2,6 @@
   --primary-orange: #ff7e00;
   --dark-background: #1c1c1c;
   --light-text: #f0f0f0;
-  --secondary-background: #ffffff;
   --accent-gray: #a0a0a0;
 }
 
@@ -10,38 +9,27 @@
   box-sizing: border-box;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: var(--dark-background);
+  background-image: linear-gradient(rgba(28, 28, 28, 0.8), rgba(28, 28, 28, 0.8)), 
+                    url('https://img.freepik.com/free-vector/black-background-with-wavy-lines_52683-76524.jpg?semt=ais_hybrid&w=740&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--light-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .App {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  color: var(--dark-background);
   text-align: center;
   position: relative;
-}
-
-.bg-image-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -2;
-}
-
-.hero-overlay-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(28, 28, 28, 0.7); 
-  z-index: -1;
 }
 
 .main-content {
@@ -73,7 +61,6 @@ body {
   display: flex;
   gap: 1.8rem;
   align-items: center;
-  transition: transform 0.3s ease-in-out;
 }
 
 .nav-links a {
@@ -106,7 +93,7 @@ body {
 
 .login-button {
   background-color: var(--primary-orange);
-  color: var(--dark-background);
+  color: #000;
   padding: 0.6rem 1.25rem;
   border-radius: 6px;
   font-weight: 700;
@@ -136,12 +123,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--light-text);
   padding: 0 20px;
-}
-
-.hero-content {
-  position: relative;
 }
 
 .main-title {
@@ -193,7 +175,6 @@ body {
 }
 
 .features-section {
-  background-color: transparent; 
   min-height: 50vh;
   padding: 5rem 2rem;
   display: flex;
@@ -217,74 +198,89 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
-  overflow: hidden;
-}
-
-.features-list li a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
-  display: block; 
-  padding: 18px 25px;
-  width: 100%;
-  text-align: center;
-  transition: color 0.2s; 
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s, box-shadow 0.2s;
 }
 
 .features-list li:hover {
-  transform: translateY(-3px);
-  background-color: #ffa467;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  background-color: #ffa434;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 126, 0, 0.2);
+}
+
+.features-list li a {
+  color: white;
+  text-decoration: none;
+  display: block; 
+  padding: 18px 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .app-footer {
   background-color: rgba(17, 17, 17, 0.9);
   color: var(--accent-gray);
   padding: 2rem 1rem;
-  font-size: 0.9rem;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 1rem 2rem;
-  }
+  .navbar { padding: 1rem 2rem; }
+  .mobile-menu-button { display: block; }
 
-  .mobile-menu-button {
-    display: block;
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 998;
   }
 
   .nav-links {
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--dark-background);
+    top: 80px; 
+    right: 20px;
+    width: 260px;
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(10px);
     flex-direction: column;
-    padding: 1.5rem 2rem; 
-    transform: translateY(-200%);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    padding: 20px; 
+    border-radius: 24px;
+    border: 1px solid rgba(255, 126, 0, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 126, 0, 0.1);
+    transform: translateY(-20px) scale(0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 999;
-    align-items: stretch;
-    gap: 0.8rem; 
+    align-items: stretch; 
+    gap: 10px;
   }
 
-  .nav-links a::after {
-    display: none;
+  .nav-links.nav-open { 
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: all;
   }
 
-  .nav-links.nav-open {
-    transform: translateY(0);
+  .nav-links a, .nav-links .login-button {
+    padding: 15px 20px;
+    border-radius: 14px;
+    text-align: left;
+    width: 100%;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+    background: transparent;
+    color: white;
+    border: none;
+    box-shadow: none;
   }
 
-  .login-button {
-    width: 100%; 
-    margin-top: 0.5rem;
+  .nav-links a:hover, .nav-links .active-link {
+    background: rgba(255, 126, 0, 0.15);
+    color: var(--primary-orange);
   }
 
-  .main-title {
-    font-size: 3.5rem;
-  }
+  .nav-links a::after { display: none; } 
+
+  .main-title { font-size: 3.5rem; }
 }
-
