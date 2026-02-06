@@ -72,11 +72,12 @@ const HeroSection = () => {
 
 const FeaturesSection = () => {
   const features = [
-    { name: "Yarrlist", url: "https://yarrlist.xyz/" }, 
-    { name: "Cineby", url: "https://www.cineby.gd/" }, 
+    { name: "AEScripts", url: "https://freevideoeffect.com/aescripts-deep-glow-2/" },
+    { name: "WeLibrary", url: "https://welib.org/ /" },
+    { name: "Cineby", url: "https://www.cineby.gd/" },
     { name: "SteamRip", url: "https://steamrip.com/" }, 
-    { name: "ToxicGames", url: "https://toxicgames.in/" },
     { name: "FileCR", url: "https://filecr.com/us-en/" },
+    { name: "MangaFire", url: "https://mangafire.to/home" },
   ];
 
   return (
