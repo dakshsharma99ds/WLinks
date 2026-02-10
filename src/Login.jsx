@@ -30,13 +30,6 @@ const Login = ({ onBackToHome }) => {
   return (
     <>
       <style jsx="true">{`
-        :root {
-          --primary-orange: #ff7e00;
-          --dark-background: #1c1c1c;
-          --light-text: #f0f0f0;
-          --accent-gray: #a0a0a0;
-        }
-
         .login-page {
           min-height: 89vh;
           display: flex;
@@ -46,7 +39,7 @@ const Login = ({ onBackToHome }) => {
         }
 
         .login-card {
-          background: rgba(34, 34, 34, 0.9);
+          background: rgba(34, 34, 34, 0.7);
           padding: 30px;
           border-radius: 15px;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -54,6 +47,7 @@ const Login = ({ onBackToHome }) => {
           max-width: 400px;
           color: white;
           text-align: center;
+          border: 1px solid rgba(255, 126, 0, 0.2);
         }
 
         .login-card h2 {
@@ -90,7 +84,7 @@ const Login = ({ onBackToHome }) => {
           padding: 12px 15px;
           border-radius: 8px;
           border: 1px solid #444;
-          background: #2a2a2a;
+          background: rgba(42, 42, 42, 0.8);
           color: white;
           outline: none;
           transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -105,10 +99,11 @@ const Login = ({ onBackToHome }) => {
           width: 100%;
           padding: 14px;
           background: var(--primary-orange);
-          color: black;
+          color: white;
           border: none;
           border-radius: 8px;
           font-size: 1.1rem;
+          text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.6);
           font-weight: bold;
           cursor: pointer;
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
