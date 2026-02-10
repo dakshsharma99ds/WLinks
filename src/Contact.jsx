@@ -2,59 +2,64 @@ import React from 'react';
 
 const styles = {
     contactSection: {
-        minHeight: '90vh',
-        padding: '20px 20px',
+        minHeight: '85vh',
+        padding: '10px 20px',
         textAlign: 'center',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center'
     },
     contactTitle: {
-        fontSize: '2.5rem',
+        fontSize: '2.2rem',
         fontWeight: 'bold',
-        marginBottom: '0px',
+        marginBottom: '3px',
         color: '#ff7e00',
-        marginTop: '10px'
     },
     contactSubtitle: { 
-        fontSize: '1.2rem', 
-        marginBottom: '20px', 
+        fontSize: '1rem',
+        marginTop: '0px',
+        marginBottom: '25px', 
         color: '#a0a0a0' 
     },
     formContainer: {
         width: '100%', 
-        maxWidth: '500px', 
-        background: 'rgba(34, 34, 34, 0.9)',
-        padding: '40px', 
+        maxWidth: '420px',
+        background: 'rgba(34, 34, 34, 0.7)', 
+        padding: '25px 30px', 
         borderRadius: '15px', 
         boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)',
+        border: '1px solid rgba(255, 126, 0, 0.2)'
     },
     formGroup: { 
-        marginBottom: '20px', 
+        marginBottom: '15px',
         textAlign: 'left' 
     },
     input: {
         width: '100%', 
-        padding: '12px', 
+        padding: '10px',
         borderRadius: '8px', 
         border: '1px solid #444',
-        backgroundColor: '#2a2a2a', 
+        backgroundColor: 'rgba(42, 42, 42, 0.8)', 
         color: '#fff', 
         transition: 'border-color 0.3s, box-shadow 0.3s',
-        outline: 'none'
+        outline: 'none',
+        fontSize: '0.9rem'
     },
     submitButton: {
         width: '100%',
-        padding: '14px',
+        padding: '12px',
         backgroundColor: '#ff7e00',
-        fontSize: '18px', 
-        color: 'Black',
+        fontSize: '16px',
+        color: 'white',
         border: 'none', 
         borderRadius: '8px', 
         fontWeight: 'bold', 
         cursor: 'pointer',
+        textShadow: '2px 4px 6px rgba(0, 0, 0, 0.3)',
         boxShadow: '0 4px 15px rgba(0, 0, 0, 0.4)', 
-        transition: 'all 0.3s ease'
+        transition: 'all 0.3s ease',
+        marginTop: '10px'
     },
 };
 
@@ -75,16 +80,16 @@ const ContactSection = () => {
             <div style={styles.formContainer}>
                 <form onSubmit={e => { e.preventDefault(); alert('Sent!'); }}>
                     <div style={styles.formGroup}>
-                        <label style={{color: '#a0a0a0'}}>Your Name</label>
+                        <label style={{color: '#a0a0a0', fontSize: '0.85rem', marginBottom: '5px', display: 'block'}}>Your Name</label>
                         <input style={styles.input} onFocus={handleFocus} onBlur={handleBlur} required />
                     </div>
                     <div style={styles.formGroup}>
-                        <label style={{color: '#a0a0a0'}}>Your Email</label>
+                        <label style={{color: '#a0a0a0', fontSize: '0.85rem', marginBottom: '5px', display: 'block'}}>Your Email</label>
                         <input type="email" style={styles.input} onFocus={handleFocus} onBlur={handleBlur} required />
                     </div>
                     <div style={styles.formGroup}>
-                        <label style={{color: '#a0a0a0'}}>Message</label>
-                        <textarea style={{...styles.input, minHeight: '120px'}} onFocus={handleFocus} onBlur={handleBlur} required />
+                        <label style={{color: '#a0a0a0', fontSize: '0.85rem', marginBottom: '5px', display: 'block'}}>Message</label>
+                        <textarea style={{...styles.input, minHeight: '100px'}} onFocus={handleFocus} onBlur={handleBlur} required />
                     </div>
                     <button 
                         style={styles.submitButton}
