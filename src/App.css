@@ -17,7 +17,6 @@ html, body {
 }
 
 * {
-  scrollbar-width: thin;
   scrollbar-color: var(--primary-orange) var(--dark-background);
 }
 
