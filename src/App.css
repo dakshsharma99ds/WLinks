@@ -16,10 +16,6 @@ html, body {
   padding: 0;
 }
 
-* {
-  scrollbar-color: var(--primary-orange) var(--dark-background);
-}
-
 body {
   margin: 0;
   padding: 0;
