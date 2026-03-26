@@ -16,24 +16,6 @@ html, body {
   padding: 0;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--dark-background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary-orange);
-  border-radius: 10px;
-  border: 2px solid var(--dark-background);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #e67200;
-}
-
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--primary-orange) var(--dark-background);
