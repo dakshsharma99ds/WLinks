@@ -9,6 +9,11 @@
   box-sizing: border-box;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-gray) var(--dark-background);
+}
+
 html, body {
   overscroll-behavior-y: none;
   background-color: var(--dark-background);
