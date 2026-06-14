@@ -83,7 +83,7 @@ const FeaturesSection = () => {
   const features = [
     { name: "AEScripts", url: "https://freevideoeffect.com/aescripts-deep-glow-2/" },
     { name: "WeLibrary", url: "https://welib.org/" },
-    { name: "Cineby", url: "https://www.cineby.gd/" },
+    { name: "Cineby", url: "https://www.cineby.at/" },
     { name: "SteamRip", url: "https://steamrip.com/" }, 
     { name: "FileCR", url: "https://filecr.com/us-en/" },
     { name: "MangaFire", url: "https://mangafire.to/home" },
